@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --brand-yellow: #F4C430;
+  --brand-orange: #FF6B35;
+  --brand-teal: #14B8A6;
+  --brand-navy: #0F1419;
+  --brand-primary: #F4C430;
+  --brand-secondary: #FF6B35;
+  --brand-accent: #14B8A6;
+  --brand-gradient: linear-gradient(135deg, #F4C430, #FF6B35, #14B8A6);
+}
+
+/* Custom Components */
+@layer components {
+  .brand-button {
+    @apply bg-gradient-to-r from-yellow-500 via-orange-500 to-teal-500 hover:from-yellow-600 hover:via-orange-600 hover:to-teal-600;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .brand-accent {
+    @apply bg-gradient-to-r from-yellow-400 via-orange-400 to-teal-400 bg-clip-text text-transparent;
+  }
+
+  .service-card-1 {
+    @apply bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border-yellow-500/20 hover:border-yellow-500/40;
+  }
+
+  .service-card-2 {
+    @apply bg-gradient-to-br from-orange-500/10 to-red-500/10 border-orange-500/20 hover:border-orange-500/40;
+  }
+
+  .service-card-3 {
+    @apply bg-gradient-to-br from-teal-500/10 to-cyan-500/10 border-teal-500/20 hover:border-teal-500/40;
+  }
+
+  .service-card-4 {
+    @apply bg-gradient-to-br from-blue-500/10 to-indigo-500/10 border-blue-500/20 hover:border-blue-500/40;
+  }
+
+  .service-card-5 {
+    @apply bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-purple-500/20 hover:border-purple-500/40;
+  }
+}
+
+/* Custom Animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating-animation {
+  animation: floating 3s ease-in-out infinite;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply from-yellow-400 to-orange-400;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
